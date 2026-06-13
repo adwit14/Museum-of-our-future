@@ -1,331 +1,250 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Museum of Our Future</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-background:#0b0b0b;
-color:white;
-font-family:Georgia, serif;
-overflow-x:hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-section{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:60px;
+body {
+  font-family: Georgia, serif;
+  background: #050505;
+  color: white;
 }
 
-.hero{
-text-align:center;
-background:linear-gradient(to bottom,#000,#111);
+.panel {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background-size: cover;
+  background-position: center;
 }
 
-.hero h1{
-font-size:4rem;
-color:#d4af37;
-margin-bottom:20px;
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75)
+  );
 }
 
-.hero p{
-font-size:1.3rem;
-max-width:800px;
-margin:auto;
-line-height:1.8;
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 30px;
+  border: 1px solid rgba(212,175,55,0.35);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
 }
 
-.exhibit{
-display:flex;
-gap:60px;
-align-items:center;
-max-width:1400px;
+.label {
+  color: #d4af37;
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
-.exhibit img{
-width:50%;
-border-radius:12px;
-box-shadow:0 0 30px rgba(212,175,55,.25);
+h1 {
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 20px;
 }
 
-.text{
-width:50%;
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 18px;
 }
 
-.number{
-color:#d4af37;
-letter-spacing:4px;
-margin-bottom:15px;
+.date {
+  color: #d4af37;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-h2{
-font-size:3rem;
-margin-bottom:20px;
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
-.description{
-font-size:1.2rem;
-line-height:1.8;
-color:#ddd;
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 26px;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 1rem;
 }
 
-.final{
-text-align:center;
+.small {
+  margin-top: 25px;
+  font-size: 1rem;
+  color: #ccc;
 }
 
-.final h2{
-font-size:4rem;
-color:#d4af37;
-margin-bottom:25px;
+.footer {
+  min-height: 70vh;
+  background: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 35px;
 }
 
-.final p{
-max-width:900px;
-margin:auto;
-font-size:1.3rem;
-line-height:2;
+.footer .content {
+  background: transparent;
 }
 
-footer{
-padding:80px;
-text-align:center;
-font-size:1.2rem;
-color:#aaa;
-}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.3rem;
+  }
 
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+  }
+
+  .content {
+    padding: 24px;
+  }
+}
 </style>
-
 </head>
 
 <body>
 
-<section class="hero">
-
-<div>
-
-<img src="museum.jpg.PNG" style="width:80%;max-width:1000px;border-radius:16px;margin-bottom:40px;">
-
-<h1>The Museum of Our Future</h1>
-
-<p>
-A collection of moments that have not happened yet,
-but already mean everything to me.
-</p>
-
-</div>
-
-
+<section class="panel" style="background-image: url('museum.jpg.PNG');">
+  <div class="content">
+    <div class="label">Private Collection</div>
+    <h1>The Museum of Our Future</h1>
+    <p>
+      A collection of moments that have not happened yet,
+      but already mean everything to me.
+    </p>
+    <a href="#pittsburgh" class="button">Begin Tour</a>
+    <div class="small">Curated by Adwit</div>
+  </div>
 </section>
 
-<section>
-
-<div class="exhibit">
-
-<img src="pittsburgh.jpg.PNG">
-
-<div class="text">
-
-<div class="number">EXHIBIT 001</div>
-
-<h2>The Great Pittsburgh Reunion</h2>
-
-<div class="description">
-
-September.
-
-The moment another countdown reaches zero.
-
-The moment airport doors open and distance finally loses.
-
-Every mile, every missed hug, every video call leads here.
-
-</div>
-
-</div>
-
-</div>
-
+<section id="pittsburgh" class="panel" style="background-image: url('pittsburgh.jpg.PNG');">
+  <div class="content">
+    <div class="label">Exhibit I</div>
+    <h2>The Great Pittsburgh Reunion</h2>
+    <div class="date">September</div>
+    <p>
+      After months apart,<br>
+      the countdown reaches zero.<br><br>
+      Airport doors open.<br>
+      Distance loses.
+    </p>
+  </div>
 </section>
 
-<section>
-
-<div class="exhibit">
-
-<div class="text">
-
-<div class="number">EXHIBIT 002</div>
-
-<h2>The Tunisia Reunion</h2>
-
-<div class="description">
-
-December.
-
-Another airport.
-
-Another embrace.
-
-Another reminder that no amount of distance can compete with finding each other again.
-
-</div>
-
-</div>
-
-<img src="tunisia.jpg.PNG">
-
-</div>
-
+<section class="panel" style="background-image: url('tunisia.jpg.PNG');">
+  <div class="content">
+    <div class="label">Exhibit II</div>
+    <h2>The Tunisia Reunion</h2>
+    <div class="date">December</div>
+    <p>
+      Another airport.<br>
+      Another embrace.<br><br>
+      Another reminder that no distance
+      is stronger than us finding each other again.
+    </p>
+  </div>
 </section>
 
-<section>
-
-<div class="exhibit">
-
-<img src="home.jpg.PNG">
-
-<div class="text">
-
-<div class="number">EXHIBIT 003</div>
-
-<h2>Our First Home</h2>
-
-<div class="description">
-
-Not because of the walls.
-
-Not because of the furniture.
-
-But because it will be the first place where goodbye is no longer part of the routine.
-
-</div>
-
-</div>
-
-</div>
-
+<section class="panel" style="background-image: url('home.jpg.PNG');">
+  <div class="content">
+    <div class="label">Exhibit III</div>
+    <h2>Our First Home</h2>
+    <p>
+      Not special because of the walls.<br>
+      Not special because of the furniture.<br><br>
+      Special because goodbye
+      is no longer part of the routine.
+    </p>
+  </div>
 </section>
 
-<section>
-
-<div class="exhibit">
-
-<div class="text">
-
-<div class="number">EXHIBIT 004</div>
-
-<h2>Our First Morning Together</h2>
-
-<div class="description">
-
-No airports.
-
-No visas.
-
-No countdowns.
-
-Just coffee.
-
-Sunlight.
-
-And the privilege of starting an ordinary day together.
-
-</div>
-
-</div>
-
-<img src="morning.jpg.PNG">
-
-</div>
-
+<section class="panel" style="background-image: url('morning.jpg.PNG');">
+  <div class="content">
+    <div class="label">Exhibit IV</div>
+    <h2>The First Weekend</h2>
+    <p>
+      No flights.<br>
+      No airports.<br>
+      No countdowns.<br><br>
+      Just us.
+    </p>
+  </div>
 </section>
 
-<section>
-
-<div class="exhibit">
-
-<img src="ordinary.jpg.PNG">
-
-<div class="text">
-
-<div class="number">EXHIBIT 005</div>
-
-<h2>The Ordinary Day</h2>
-
-<div class="description">
-
-Experts often search for life's most important moments.
-
-Yet this exhibit suggests something different.
-
-Maybe happiness is simply coming home to the same person over and over again.
-
-</div>
-
-</div>
-
-</div>
-
+<section class="panel" style="background-image: url('ordinary.jpg.PNG');">
+  <div class="content">
+    <div class="label">Exhibit V</div>
+    <h2>The Ordinary Day</h2>
+    <p>
+      Maybe happiness is not always loud.<br><br>
+      Maybe it is dinner at home,<br>
+      laughing about nothing,<br>
+      and coming back to the same person every day.
+    </p>
+  </div>
 </section>
 
-<section class="final">
-
-<div>
-
-<img src="sunset.jpg.PNG" style="width:70%;border-radius:12px;margin-bottom:40px;">
-
-<h2>Final Hall</h2>
-
-<p>
-
-This exhibit remains unfinished.
-
-It requires years of memories that have not yet happened.
-
-Trips not yet taken.
-
-Conversations not yet had.
-
-Dreams not yet achieved.
-
-But one thing is already certain.
-
-Every exhibit in this museum begins with you.
-
-</p>
-
-</div>
-
+<section class="panel" style="background-image: url('sunset.jpg.PNG');">
+  <div class="content">
+    <div class="label">Final Hall</div>
+    <h2>This Exhibit Is Incomplete</h2>
+    <p>
+      The remaining pieces have not happened yet.<br><br>
+      They are waiting for us.
+    </p>
+    <div class="small">
+      Exhibits completed: 0<br>
+      Exhibits planned: A lifetime
+    </div>
+  </div>
 </section>
 
-<footer>
-
-❤️
-
-<br><br>
-
-Thank you for visiting.
-
-<br><br>
-
-Love,
-
-<br>
-
-Adwit
-
-</footer>
+<div class="footer">
+  <div class="content">
+    <div class="label">Museum Status</div>
+    <h2>Most Valuable Exhibit</h2>
+    <p>You.</p>
+    <div class="small">
+      Love,<br>
+      Adwit
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
